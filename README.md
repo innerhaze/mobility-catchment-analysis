@@ -146,7 +146,7 @@ A synthetic-data script in this repository reproduces the method at small scale:
 *Pings around a fictional establishment, with those inside the footprint highlighted.*
 
 ![Pre-visit pings on an H3 grid](docs/02_hex_grid.png)
-*Pre-visit pings aggregated onto an H3 grid at resolution 10, intensity by ping count.*
+*H3 resolution 10. The synthetic footprint is small, so the reproduction uses a finer resolution than the res 8 (~0.73 km²) of the real analysis described in the text, to show cell-level variation at this scale. Intensity by ping count.*
 
 ![Convex hull vs concave hull](docs/03_hulls.png)
 *Convex hull (over-inclusive) and concave hull (closer to the point distribution) over the same pre-visit cloud.*
