@@ -179,6 +179,12 @@ def pre_visit_pings(
 # 4. Hex-grid aggregation
 # ---------------------------------------------------------------------------
 def hex_counts(pings: pd.DataFrame, resolution: int = 10) -> dict[str, int]:
+    # H3 resolution 10 (~15,000 m² per cell) is used here because the
+    # synthetic footprint is small; the real analysis's resolution 8
+    # (~0.73 km², neighbourhood scale) would collapse every ping into a
+    # single cell at this scale. The README describes the res-8 real
+    # analysis; this reproduction uses res 10 only to show cell-level
+    # variation.
     counts: dict[str, int] = {}
     for _, row in pings.iterrows():
         cell = h3.latlng_to_cell(row["lat"], row["lng"], resolution)
